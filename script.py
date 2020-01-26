@@ -46,9 +46,9 @@ def main():
         msg['Subject']="Hi"+str(names)
 
         msg.attach(MIMEText(message, 'plain'))
-
-        filename = "Hello.pdf"
-        attachment = open("testfile.pdf", "rb") 
+        certificateFile=str(names)+".pdf"
+        filename = "Certificate.pdf"
+        attachment = open(certificateFile, "rb") 
         p = MIMEBase('application', 'octet-stream')
         p.set_payload((attachment).read()) 
         encoders.encode_base64(p)
